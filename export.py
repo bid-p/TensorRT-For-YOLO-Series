@@ -107,7 +107,7 @@ class EngineBuilder:
         self.builder = trt.Builder(self.trt_logger)
         self.config = self.builder.create_builder_config()
 
-        config.max_workspace_size = 1 << 30
+        self.config.max_workspace_size = 1 << 30
         # self.config.set_memory_pool_limit(trt.MemoryPoolType.WORKSPACE, workspace * (2 ** 30))
         # self.config.max_workspace_size = workspace * (2 ** 30)  # Deprecation
 
